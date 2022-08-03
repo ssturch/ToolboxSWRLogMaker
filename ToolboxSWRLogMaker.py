@@ -5,19 +5,19 @@ Module Module1
 
     Sub Main()
 
-        Console.WriteLine("Введите версию оригинального Toolbox c которой будет списываться структура")
+        Console.WriteLine("Р’РІРµРґРёС‚Рµ РІРµСЂСЃРёСЋ РѕСЂРёРіРёРЅР°Р»СЊРЅРѕРіРѕ Toolbox c РєРѕС‚РѕСЂРѕР№ Р±СѓРґРµС‚ СЃРїРёСЃС‹РІР°С‚СЊСЃСЏ СЃС‚СЂСѓРєС‚СѓСЂР°")
         ToolboxVersion = Console.ReadLine()
 
         Dim ValidPath As Boolean = False
 
         While Not ValidPath
-            Console.WriteLine("Введите папку, куда будет сохраняться SWRLog файл со структурой оригинального Toolbox")
+            Console.WriteLine("Р’РІРµРґРёС‚Рµ РїР°РїРєСѓ, РєСѓРґР° Р±СѓРґРµС‚ СЃРѕС…СЂР°РЅСЏС‚СЊСЃСЏ SWRLog С„Р°Р№Р» СЃРѕ СЃС‚СЂСѓРєС‚СѓСЂРѕР№ РѕСЂРёРіРёРЅР°Р»СЊРЅРѕРіРѕ Toolbox")
             PathToSaveSWRLog = Console.ReadLine()
             If My.Computer.FileSystem.DirectoryExists(PathToSaveSWRLog) = True Then
-                Console.WriteLine("Данная папка существует")
+                Console.WriteLine("Р”Р°РЅРЅР°СЏ РїР°РїРєР° СЃСѓС‰РµСЃС‚РІСѓРµС‚")
                 ValidPath = True
             Else
-                Console.WriteLine("Данная папка не существует, проверьте правильность ввода и введите снова")
+                Console.WriteLine("Р”Р°РЅРЅР°СЏ РїР°РїРєР° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚, РїСЂРѕРІРµСЂСЊС‚Рµ РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ РІРІРѕРґР° Рё РІРІРµРґРёС‚Рµ СЃРЅРѕРІР°")
 
             End If
         End While
@@ -25,13 +25,13 @@ Module Module1
         ValidPath = False
 
         While Not ValidPath
-            Console.WriteLine("Введите папку с оригинальным Toolbox для получения его структуры")
+            Console.WriteLine("Р’РІРµРґРёС‚Рµ РїР°РїРєСѓ СЃ РѕСЂРёРіРёРЅР°Р»СЊРЅС‹Рј Toolbox РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ РµРіРѕ СЃС‚СЂСѓРєС‚СѓСЂС‹")
             OriginalToolboxFolder = Console.ReadLine()
             If My.Computer.FileSystem.DirectoryExists(OriginalToolboxFolder) = True Then
-                Console.WriteLine("Данная папка существует")
+                Console.WriteLine("Р”Р°РЅРЅР°СЏ РїР°РїРєР° СЃСѓС‰РµСЃС‚РІСѓРµС‚")
                 ValidPath = True
             Else
-                Console.WriteLine("Данная папка не существует, проверьте правильность ввода и введите снова")
+                Console.WriteLine("Р”Р°РЅРЅР°СЏ РїР°РїРєР° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚, РїСЂРѕРІРµСЂСЊС‚Рµ РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ РІРІРѕРґР° Рё РІРІРµРґРёС‚Рµ СЃРЅРѕРІР°")
 
             End If
         End While
@@ -40,10 +40,10 @@ Module Module1
 
         While Not IsToolboxPath
             If My.Computer.FileSystem.FileExists(OriginalToolboxFolder & "\lang\English\SWBrowser.mdb") = True Or My.Computer.FileSystem.FileExists(OriginalToolboxFolder & "\lang\English\SWBrowser.sldedb") = True Then
-                Console.WriteLine("Данная папка является папкой Toolbox")
+                Console.WriteLine("Р”Р°РЅРЅР°СЏ РїР°РїРєР° СЏРІР»СЏРµС‚СЃСЏ РїР°РїРєРѕР№ Toolbox")
                 IsToolboxPath = True
             Else
-                Console.WriteLine("Данная папка не содержит компоненты Toolbox, проверьте правильность ввода и введите снова")
+                Console.WriteLine("Р”Р°РЅРЅР°СЏ РїР°РїРєР° РЅРµ СЃРѕРґРµСЂР¶РёС‚ РєРѕРјРїРѕРЅРµРЅС‚С‹ Toolbox, РїСЂРѕРІРµСЂСЊС‚Рµ РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ РІРІРѕРґР° Рё РІРІРµРґРёС‚Рµ СЃРЅРѕРІР°")
             End If
         End While
 
@@ -56,7 +56,7 @@ Module Module1
             My.Computer.FileSystem.WriteAllText(PathToSaveSWRLog & "\ToolboxFileList " & ToolboxVersion & ".swrlog", FoundFileAndPath & vbCrLf, True)
         Next
 
-        Console.WriteLine("Запись структуры Toolbox завершена, нажмите любую кнопку")
+        Console.WriteLine("Р—Р°РїРёСЃСЊ СЃС‚СЂСѓРєС‚СѓСЂС‹ Toolbox Р·Р°РІРµСЂС€РµРЅР°, РЅР°Р¶РјРёС‚Рµ Р»СЋР±СѓСЋ РєРЅРѕРїРєСѓ")
         Console.ReadLine()
 
     End Sub
